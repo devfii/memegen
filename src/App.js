@@ -4,19 +4,20 @@ import './App.css';
 //import Meme from './components/Meme';
 
 function App() {
-  const [value, setValue] = useState(0);
+  const [count, setCount] = useState(0);
   function handleDecr() {
-    setValue(value-1)
+    setCount(prevCount => prevCount-1)
   }
 
+
   function handleIncr() {
-    setValue(value+1)
+    setCount(prevCount => prevCount+1)
   }
   return (
     <div>
       <button onClick={handleDecr}>-</button>
       <button onClick={handleIncr}>+</button>
-      <h3>{value}</h3>
+      <h3>{count}</h3>
       </div>
     
   )
