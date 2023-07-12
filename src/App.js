@@ -1,25 +1,32 @@
-import logo from './logo.svg';
+import {useState} from 'react';
 import './App.css';
+//import Header from './components/Header';
+//import Meme from './components/Meme';
 
 function App() {
+  const [isSI, setisSI] = useState("Yes");
+  function toggle() {
+    if(isSI ==="Yes") setisSI("No")
+    else setisSI("Yes");
+  }
+  function handleClick(){
+    toggle()
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <button onClick={handleClick}>Toggle</button>
+      <h3>{isSI}</h3>
+      </div>
+    
+  )
+  /*
+  return (
+    <div>
+      <Header />
+      <Meme />
     </div>
   );
+  */
 }
 
 export default App;
