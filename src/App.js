@@ -4,18 +4,19 @@ import './App.css';
 //import Meme from './components/Meme';
 
 function App() {
-  const [isSI, setisSI] = useState("Yes");
-  function toggle() {
-    if(isSI ==="Yes") setisSI("No")
-    else setisSI("Yes");
+  const [value, setValue] = useState(0);
+  function handleDecr() {
+    setValue(value-1)
   }
-  function handleClick(){
-    toggle()
+
+  function handleIncr() {
+    setValue(value+1)
   }
   return (
     <div>
-      <button onClick={handleClick}>Toggle</button>
-      <h3>{isSI}</h3>
+      <button onClick={handleDecr}>-</button>
+      <button onClick={handleIncr}>+</button>
+      <h3>{value}</h3>
       </div>
     
   )
