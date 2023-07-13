@@ -1,14 +1,13 @@
 import './App.css';
 import Header from './components/Header';
-import Ternary from './components/Ternary';
+import Card from './components/Card'
 //import Meme from './components/Meme';
 
 function App() {
-  //<Meme />
   return (
     <div>
       <Header />
-      <Ternary />
+      <Card />
     </div>
   );
 
