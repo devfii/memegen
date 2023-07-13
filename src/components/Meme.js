@@ -1,3 +1,4 @@
+import {useState} from 'react';
 import memesData from '../memesData';
 
 function generateRandomMeme() {
@@ -8,17 +9,16 @@ function generateRandomMeme() {
 }
 
 export default function Meme() {
-    let meme = generateRandomMeme();
-    
+    const [meme, setMeme] = useState(generateRandomMeme)
+    const isGoingOut = false;
     function handleClick() {
-        alert("It works");
-        meme = generateRandomMeme();
+        setMeme(generateRandomMeme)
     }
     return (
         <main>
             <div className="form">
                 <input type="text" className="form--input" placeholder="Top text"/>
-                <input type="text" className="form--input" placeholder="Bottom text"/>
+                <input type="text" className="form--input" placeholder={isGoingOut ? "Bottom Text": "No text"}/>
                 <button className="form--button" onClick={handleClick}>Get a new meme image  🖼</button>
             </div>
             <img src={meme.url} alt={meme.name} className='main--image'/>
